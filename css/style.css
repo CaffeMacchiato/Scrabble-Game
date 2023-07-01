@@ -1,0 +1,136 @@
+/*
+File: style.css
+GUI Assignment 5: Implementing a Bit of Scrabble with Drag-and-Drop (with Extra Credits)
+Masha Tsykora, UMass Lowell Computer Science, mary_tsykora@student.uml.edu
+Copyright (c) 2023 by Masha Tsykora. All rights reserved. May be freely copied or
+excerpted for educational purposes with credit to the author.
+Updated on 6/30/23 at 9:00pm.
+Instructor: Professor Wenjin Zhou
+Sources of Help: W3Schools, MDN Web Docs, CodingTheSmartway, C# Corner
+Brief Overview: I created a Scrabble game that displays in the browser. There are a lot of 
+issues with it, and it's not even close to complete. I've discussed this in more detail in 
+my attached writeup.txt file, but I will give brief explanations for my code/functions in here.
+*/
+
+
+body {
+  background-image: url("../images/lilacwhitewood.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "board board tile-holder";
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr 1fr 200px;
+  height: 100vh;
+  margin: 0;
+}
+
+.light-pink {
+  color: lightpink;
+  margin: 0;
+}
+
+#scrabble-header {
+  grid-area: header;
+  text-align: center;
+}
+
+#game-container {
+  grid-area: board;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#scrabble-content {
+  display: grid;
+  grid-template-columns: 1fr 500px;
+  grid-gap: 20px;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 30px;
+}
+
+#scrabble-board-container {
+  width: 650px;
+  height: 650px;
+  position: relative;
+}
+
+#scrabble-board {
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/ScrabbleBoard.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+
+.scrabble-grid {
+  display: grid;
+  grid-template-columns: repeat(15, 33px);
+  grid-template-rows: repeat(15, 36px);
+  gap: 1px;
+  position: absolute;
+  top: calc(50% + 3px);
+  left: calc(50% + 18px);
+  transform: translate(-50%, -50%);
+  z-index: 1; /* Here, I'm positioning this scrabble grid on TOP of the scrabble board jpg image */
+}
+
+#tile-holder-container {
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/scrabble-tile-holder-406774_640.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+
+#tile-holder {
+  width: 100%;
+  height: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 30px);
+  grid-gap: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1; /* Here, I'm positioning this grid on TOP of the tile holder png image */
+}
+
+.droppable {
+  width: 33px;
+  height: 36px;
+  border: 1px solid #ccc;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.draggable {
+  width: 30px;
+  height: 30px;
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  cursor: move;
+}
+
+.highlight {
+  border: 1px solid limegreen;
+}
+
+#score {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+  color: pink;
+}

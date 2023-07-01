@@ -1,0 +1,63 @@
+<!--
+File: index.html
+GUI Assignment 5: Implementing a Bit of Scrabble with Drag-and-Drop (with Extra Credits)
+Masha Tsykora, UMass Lowell Computer Science, mary_tsykora@student.uml.edu
+Copyright (c) 2023 by Masha Tsykora. All rights reserved. May be freely copied or
+excerpted for educational purposes with credit to the author.
+Updated on 6/30/23 at 9:00pm.
+Instructor: Professor Wenjin Zhou
+Sources of Help: W3Schools, MDN Web Docs, CodingTheSmartway, C# Corner
+Brief Overview: I created a Scrabble game that displays in the browser. There are a lot of 
+issues with it, and it's not even close to complete. I've discussed this in more detail in 
+my attached writeup.txt file, but I will give brief explanations for my code/functions in here.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Scrabble</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+    <body>
+        <div id="game-container">
+
+            <div id="scrabble-header">
+                <h1 class="light-pink">Scrabble !!!</h1>
+            </div>
+
+            <div id="score">Score: 0</div>
+
+            <div id="scrabble-content">
+
+                <div id="scrabble-board-container">
+                    <div id="scrabble-board">
+                        <div class="scrabble-grid"></div>
+                    </div>
+                </div>
+
+                <div id="tile-holder-container">
+
+                    <img id="tile-holder">
+                    <div class="grid">
+                        <div class="droppable"></div>
+                        <div class="droppable"></div>
+                        <div class="droppable"></div>
+                        <div class="droppable"></div>
+                        <div class="droppable"></div>
+                        <div class="droppable"></div>
+                        <div class="droppable"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </body>
+</html>
